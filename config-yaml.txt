@@ -1,0 +1,33 @@
+# Stock Forecasting Configuration
+
+# Data parameters
+stock_symbol: "AAPL"
+start_date: "2015-01-02"
+end_date: "2024-10-31"
+data_directory: "stock_data"
+
+# Model parameters
+prediction_window: 5      # Forecast horizon (days)
+encoder_length: 60        # Historical context length (days)
+volatility_window: 20     # Window for volatility calculation
+
+# Training parameters
+max_epochs: 50
+learning_rate: 1e-3
+batch_size: 64
+hidden_size: 64
+attention_head_size: 4
+dropout: 0.1
+hidden_continuous_size: 32
+
+# Evaluation parameters
+test_size: 0.2            # Proportion of data for testing
+validation_size: 0.15     # Proportion of data for validation
+
+# Hyperparameter optimization
+enable_hyperopt: false
+hyperopt_trials: 20
+hyperopt_cpu: 4
+
+# Prediction parameters
+quantiles: [0.1, 0.5, 0.9]  # Prediction quantiles
